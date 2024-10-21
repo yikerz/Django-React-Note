@@ -146,6 +146,21 @@
   - Retrieve the `User` author
   - Retrieve all notes created by the `User`
 
+### Note URL Setup
+
+33. Create `urls.py` in `backend/api`
+34. Import below modules in `backend/api/urls.py`
+
+- `django.urls.path`
+- `.views`
+
+35. Add routes in `backend/api/urls.py` for
+
+- `notes/`
+- `notes/delete/<int:pk>`
+
+36. Update `backend/backend/urls.py` to include `api/`
+
 ### Commands
 
 1. `pip install -r requirements.txt`
