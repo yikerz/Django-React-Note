@@ -161,6 +161,10 @@
 
 36. Update `backend/backend/urls.py` to include `api/`
 
+### Migrations and Testing
+
+37. Run migrations and start the server
+
 ### Commands
 
 1. `pip install -r requirements.txt`
