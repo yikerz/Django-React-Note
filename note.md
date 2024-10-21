@@ -87,6 +87,12 @@
 21. Apply migrations([cmd 5](#commands))
 22. Run the application([cmd 6](#commands))
 
+### Create a User
+
+23. Go to `127.0.0.1:<port>/api/user/register/` to create a user
+24. Use `127.0.0.1:<port>/api/token/` to obtain a token
+25. Refresh the token at `127.0.0.1:<port>/api/token/refresh/`
+
 ### Commands
 
 1. `pip install -r requirements.txt`
