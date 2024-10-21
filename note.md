@@ -165,6 +165,25 @@
 
 37. Run migrations and start the server
 
+### Frontend Setup
+
+38. Create a React project using `npm` ([cmd 7](#commands))
+39. Install `axios`, `react-router-dom` and `jwt-decode` ([cmd 8](#commands))
+40. Clean up by removing all `.css` files in `frontend/src`
+41. Remove all imports in `App.jsx` (except `react.react`)
+42. Set up a basic `App.jsx` (`App` only returns empty `<></>`)
+43. Remove import `./index.css` from `main.jsx`
+44. Create the following items
+
+- Directories
+  - `frontend/src/styles`
+  - `frontend/src/pages`
+  - `frontend/src/components`
+- Files
+  - `frontend/src/constants.js`
+  - `frontend/src/api.js`
+  - `frontend/.env`
+
 ### Commands
 
 1. `pip install -r requirements.txt`
@@ -173,3 +192,5 @@
 4. `python manage.py makemigrations`
 5. `python manage.py migrate`
 6. `python manage.py runserver <port>`
+7. `npm create vite@latest frontend -- --template react`
+8. `npm install axios react-router-dom jwt-decode`
