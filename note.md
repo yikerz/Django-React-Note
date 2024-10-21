@@ -65,6 +65,22 @@
 - `serializer_class`: Specify the serializer used for this view
 - `permission_classes`: Defines the permission rules for the view
 
+### URL Configuration
+
+18. Import below modules in `backend/backend/urls.py`
+
+- `django.urls.include`
+- `api.views.CreateUserView`
+- `rest_framework_simplejwt.views.TokenObtainPairView`
+- `rest_framework_simplejwt.views.TokenRefreshView`
+
+19. Add paths for
+
+- `api/user/register`
+- `api/token/`
+- `api/token/refresh/`
+- `api/auth`
+
 ### Commands
 
 1. `pip install -r requirements.txt`
