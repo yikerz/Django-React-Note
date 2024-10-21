@@ -1,12 +1,33 @@
 ### Install Dependencies
 
-1. Create a `requirements.txt` and list all dependencies.
+1. Create a `requirements.txt` and list all dependencies
 2. Install dependencies ([cmd 1](#commands))
 
 ### Django Project Setup
 
 3. Create a new Django project called `backend` ([cmd 2](#commands))
 4. Create a new app called `api` within the project ([cmd 3](#commands))
+
+### Backend Configuration
+
+5. Import below modules into `backend/backend/settings.py`
+
+- `datetime.timedelta`
+- `dotenv.load_dotenv`
+- `os`
+
+6. Call `load_dotenv()` at the top to load environment variables
+7. Add `"*"` to `ALLOWED_HOSTS` for hosting flexibility
+8. Configure JWT for REST API by adding `REST_FRAMEWORK` and `SIMPLE_JWT`
+9. Add below items to `INSTALLED_APPS`
+
+- `api`
+- `rest_framework`
+- `corsheaders`
+
+10. Add `corsheaders.middleware.CorsMiddleware` to `MIDDLEWARE`
+11. Set `CORS_ALLOW_ALL_ORIGINS` and `CORS_ALLOW_CREDENTIALS` to `True` at the end of the file
+12. Move `requirements.txt` into the `backend` directory
 
 ### Commands
 
