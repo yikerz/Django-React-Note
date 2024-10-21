@@ -29,6 +29,26 @@
 11. Set `CORS_ALLOW_ALL_ORIGINS` and `CORS_ALLOW_CREDENTIALS` to `True` at the end of the file
 12. Move `requirements.txt` into the `backend` directory
 
+### User Serializer
+
+13. Create `serializers.py` in `backend/api` for ORM mapping
+14. Import below modules into `serializers.py`
+
+- `django.contrib.auth.models.User`
+- `rest_framework.serializers`
+
+15. Create `UserSerializer` class
+
+- Inherit from `serializers.ModelSerializer`
+- Define an inner class `Meta` with the following attributes:
+  - `model`: Specify the model being serialized
+  - `fields`: List the fields (e.g. `id`, `username`) to be included in the serialization
+  - `extra_kwargs`: Configure `password` as `write_only`
+- Define a `create` function
+  - Accept `validated_data` as input
+  - Create a new user using `User.objects.create_user`
+  - Return the newly created user
+
 ### Commands
 
 1. `pip install -r requirements.txt`
