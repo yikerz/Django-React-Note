@@ -81,8 +81,17 @@
 - `api/token/refresh/`
 - `api/auth`
 
+### Database Migration
+
+20. Make migrations ([cmd 4](#commands))
+21. Apply migrations([cmd 5](#commands))
+22. Run the application([cmd 6](#commands))
+
 ### Commands
 
 1. `pip install -r requirements.txt`
 2. `django-admin startproject backend`
 3. `python manage.py startapp api`
+4. `python manage.py makemigrations`
+5. `python manage.py migrate`
+6. `python manage.py runserver <port>`
