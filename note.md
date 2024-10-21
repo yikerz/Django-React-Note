@@ -93,6 +93,28 @@
 24. Use `127.0.0.1:<port>/api/token/` to obtain a token
 25. Refresh the token at `127.0.0.1:<port>/api/token/refresh/`
 
+### Custom Model and Serializer
+
+26. Import `django.contrib.auth.models.User` into `backend/api/models.py`
+27. Create `Note` model class
+
+- Inherit from `models.Model`
+- Includes the following attributes
+  - `title`: `models.CharField`
+  - `content`: `models.TextField`
+  - `created_at`: `models.DateTimeField`
+  - `author`: `models.ForeignKey`
+- Create a `__str__` function to return the title
+
+28. Import `.models.Note` into `backend/api/serializers.py`
+29. Create `NoteSerializer` class
+
+- Inherit from `serializers.ModelSerializer`
+- Define an inner class `Meta` with the following attributes:
+  - `model`: Specify the model being serialized
+  - `fields`: List the fields (e.g. `title`, `content`) to be included in the serialization
+  - `extra_kwargs`: Configure `author` as `read_only`
+
 ### Commands
 
 1. `pip install -r requirements.txt`
