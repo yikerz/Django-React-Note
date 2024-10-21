@@ -61,7 +61,7 @@
 
 17. Create `CreateUserView` class with the following attributes
 
-- `queryset`: Retrive all user objects
+- `queryset`: Retrieve all user objects
 - `serializer_class`: Specify the serializer used for this view
 - `permission_classes`: Defines the permission rules for the view
 
@@ -99,7 +99,7 @@
 27. Create `Note` model class
 
 - Inherit from `models.Model`
-- Includes the following attributes
+- Define the following attributes
   - `title`: `models.CharField`
   - `content`: `models.TextField`
   - `created_at`: `models.DateTimeField`
@@ -114,6 +114,37 @@
   - `model`: Specify the model being serialized
   - `fields`: List the fields (e.g. `title`, `content`) to be included in the serialization
   - `extra_kwargs`: Configure `author` as `read_only`
+
+### Note Views
+
+30. Import below modules into `backend/api/views.py`
+
+- `.models.Note`
+- `.serializer.NoteSerializer`
+
+31. Create the `NoteListCreate` class for listing and creating notes
+
+- Inherit from `generics.ListCreateAPIView`
+- Define the following attributes
+  - `serializer_class`: Specify the serializer used for this view
+  - `permission_classes`: Sets the permission rules (e.g., `IsAuthenticated`)
+- Implement the `get_queryset` function
+  - Retrieve the `User` author
+  - Retrieve all notes created by the `User`
+- Implement the `perform_create` function
+  - Accept `serializer` as the input
+  - Call `serializer.save` if the serializer is valid
+  - Print `serializer.errors` if the serializer is invalid
+
+32. Create the `NoteDelete` class for deleting note
+
+- Inherit from `generics.DestroyAPIView`
+- Define the following attributes
+  - `serializer_class`: Specify the serializer used for this view
+  - `permission_classes`: Sets the permission rules (e.g., `IsAuthenticated`)
+- Implement the `get_queryset` function
+  - Retrieve the `User` author
+  - Retrieve all notes created by the `User`
 
 ### Commands
 
