@@ -49,6 +49,22 @@
   - Create a new user using `User.objects.create_user`
   - Return the newly created user
 
+### User View
+
+16. Import below modules in `backend/api/views.py`
+
+- `django.contrib.auth.models.User`
+- `rest_framework.generics`
+- `.serializers.UserSerializer`
+- `rest_framework.permissions.IsAuthenticated`
+- `rest_framework.permissions.AllowAny`
+
+17. Create `CreateUserView` class with the following attributes
+
+- `queryset`: Retrive all user objects
+- `serializer_class`: Specify the serializer used for this view
+- `permission_classes`: Defines the permission rules for the view
+
 ### Commands
 
 1. `pip install -r requirements.txt`
