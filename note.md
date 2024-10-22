@@ -184,6 +184,22 @@
   - `frontend/src/api.js`
   - `frontend/.env`
 
+### Define API in React
+
+45. Export constants `ACCESS_TOKEN` and `REFRESH_TOKEN` constants in `constants.js`
+46. Define base endpoint `VITE_API_URL` in `frontend/src/.env`
+47. Import below modules in `api.js`
+
+- `axios.axios`
+- `./constants.{ACCESS_TOKEN}`
+
+48. Create an Axios instance in `api.js` to handle token-based requests
+
+- `baseURL`: `import.meta.env.VITE_API_URL`
+
+49. Use axios request interceptor to attach `ACCESS_TOKEN` as Bearer token to the header of all requests
+50. Export the `api` as default
+
 ### Commands
 
 1. `pip install -r requirements.txt`
