@@ -232,6 +232,27 @@
     - Console log display `error` and set `isAuthorized` state to `false`
 - Call `auth` with `useEffect`, set `isAuthorized` state to `false` if error is caught
 
+### Frontend Pages
+
+54. Create the following files in `frontend/src/pages` with basic rendering
+
+- `Home.jsx`
+- `Register.jsx`
+- `Login.jsx`
+- `NotFound.jsx`
+
+55. Implement routes in `App.jsx` for (i.e. return `<BrowserRouter>`)
+
+- `Home` (wrapped by `ProtectedRoute`)
+- `Login`
+- `RegisterAndLogout`
+- `NotFound` (for `path="*"`)
+
+56. Create functions `Logout` and `RegisterAndLogout`
+
+- Clear the local storage
+- Return to `<Navigate to="/login" />` and `<Register />` respectively
+
 ### Commands
 
 1. `pip install -r requirements.txt`
