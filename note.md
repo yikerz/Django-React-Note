@@ -247,6 +247,7 @@
 - `Login`
 - `RegisterAndLogout`
 - `NotFound` (for `path="*"`)
+- `Logout`
 
 56. Create functions `Logout` and `RegisterAndLogout`
 
@@ -261,6 +262,41 @@
 - `p`: "The page you're looking for doesn't exist!"
 
 58. Run and test the frontend ([cmd 9](#commands))
+
+### User Forms
+
+59. Create `Form.jsx` in `frontend/src/components` with function `Form`
+
+- Accept `{route, method}` as the inputs
+- Create react states
+  - `username` (`""`)
+  - `password` (`""`)
+  - `loading` (`false`)
+- Create `useNavigate` instance as `navigate`
+- Return `<form>` with
+  - `onSubmit`: `{handleSubmit}`
+  - `className`: `form-container`
+- Inside the form
+  - Display `{method}` as `h1`
+  - Add text `<input className="form-input" />` for state `username`
+  - Add text `<input className="form-input" />` for state `password`
+- Create an async inner function `handleSubmit`
+  - Set `Loading` state to `true`
+  - Prevent default page refresh
+  - Try:
+    - Send POST request `{username, password}` to route through `api`
+    - For `login` page
+      - Save `res.data.access` as `ACCESS_TOKEN` in local storage
+      - Save `res.data.refresh` as `REFRESH_TOKEN` in local storage
+      - Navigate to `home` page
+    - For `register` page
+      - Navigate to `login` page
+  - Catch `error`:
+    - Console log display `error`
+  - Finally:
+    - Set `loading` to `false`
+
+60. Add style to `Form.jsx` using `frontend/src/styles/Form.css` (simply import `Form.css`)
 
 ### Commands
 
