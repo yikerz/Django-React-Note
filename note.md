@@ -253,6 +253,15 @@
 - Clear the local storage
 - Return to `<Navigate to="/login" />` and `<Register />` respectively
 
+### Implement "Not Found" Page
+
+57. Modify `NotFound.jsx` such that the page displays
+
+- `h1`: "404 Not Found"
+- `p`: "The page you're looking for doesn't exist!"
+
+58. Run and test the frontend ([cmd 9](#commands))
+
 ### Commands
 
 1. `pip install -r requirements.txt`
@@ -263,3 +272,4 @@
 6. `python manage.py runserver <port>`
 7. `npm create vite@latest frontend -- --template react`
 8. `npm install axios react-router-dom jwt-decode`
+9. `npm run dev`
