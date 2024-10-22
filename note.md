@@ -298,6 +298,10 @@
 
 60. Add style to `Form.jsx` using `frontend/src/styles/Form.css` (simply import `Form.css`)
 
+### Implement "Register" and "Login" Pages
+
+61. For both functions `Register()` and `Login()`, return `<Form />` with specific `route` and `method`
+
 ### Commands
 
 1. `pip install -r requirements.txt`
