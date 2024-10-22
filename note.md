@@ -200,6 +200,38 @@
 49. Use axios request interceptor to attach `ACCESS_TOKEN` as Bearer token to the header of all requests
 50. Export the `api` as default
 
+### Protected Route Component
+
+51. Create `ProtectedRoute.jsx` in `frontend/src/components`
+52. Import the following modules in `ProtectedRoute.jsx`
+
+- `react-router-dom.{Navigate}`
+- `jwt-decode.{jwtDecode}`
+- `../api.api`
+- `../constants.{REFRESH_TOKEN, ACCESS_TOKEN}`
+- `react.{useState, useEffect}`
+
+53. Create a function `ProtectedRoute`
+
+- Accept `{children}` as the input
+- Setup react state `isAuthorized` (`null`)
+- Render `<div>Loading...</div>` if the `isAuthorized` state is `null`
+- Render child components if the user is authorized, otherwise navigate to `/login`
+- Export the `ProtectedRoute` as default
+- Create async inner function `auth`
+  - Get `ACCESS_TOKEN` from local storage and set it to `token`
+  - If no token, set `isAuthorized` state to `false` and return nothing
+  - Decode `token` using `jwtDecode` and set it to `decoded`
+  - If `decoded` has expired, call `refreshToken`, otherwise set `isAuthorized` state to `true`
+- Create async inner function `refreshToken`
+  - Get `REFRESH_TOKEN` from local storage and set it to `refreshToken`
+  - Try:
+    - Send POST request to `/api/token/refresh/` through `api` using `refreshToken`
+    - If `res.status` is `200`, set `res.data.access` to `ACCESS_TOKEN` in local storage and set `isAuthorized` state to `true`, otherwise to `false`
+  - Catch `error`:
+    - Console log display `error` and set `isAuthorized` state to `false`
+- Call `auth` with `useEffect`, set `isAuthorized` state to `false` if error is caught
+
 ### Commands
 
 1. `pip install -r requirements.txt`
