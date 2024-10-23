@@ -360,6 +360,19 @@
 
 69. Import `Note.css` into `Note.jsx`
 
+### Finishing Touch
+
+70. Import `Home.css` into `Home.jsx`
+71. Create `LoadingIndicator.jsx` in `frontend/src/components`
+
+- Import `LoadingIndicator.css` into `LoadingIndicator.jsx`
+- Function `LoadingIndicator` returns
+  - `<div className="loading-container">`
+    - `<div className="loader">`
+- Export the `LoadingIndicator` as default
+
+72. Insert `LoadingIndicator` component between password and button if `loading` state is `true`
+
 ### Commands
 
 1. `pip install -r requirements.txt`
