@@ -302,6 +302,47 @@
 
 61. For both functions `Register()` and `Login()`, return `<Form />` with specific `route` and `method`
 
+### Implement "Home" Page
+
+62. For `Home()` in `Home.jsx`
+
+- Create react states
+  - `notes` (`[]`)
+  - `content` (`""`)
+  - `title` (`""`)
+
+63. Create an inner function `getNotes` in `Home()`
+
+- Send GET request to `/api/notes/` through `api`
+- Set state `notes` as `res.data` and console log the data
+- Catch `error` and console log the error
+- Call `getNotes` with `useEffect`
+
+64. Create an inner function `deleteNotes` in `Home()`
+
+- Accept `id` as the input
+- Send DELETE request to `/api/notes/delete/${id}/` through `api`
+- If `res.status` is `204`, console log display "Note deleted!", otherwise "Failed to delete note."
+- Call `getNotes`
+- Catch `error` and console log the error
+
+65. Create an inner function `createNote` in `Home()`
+
+- Prevent default refresh
+- Send POST request `{content, title}` to `/api/notes/` through `api`
+- If `res.status` is `201`, console log display "Note created!", otherwise "Failed to make note."
+- Call `getNotes`
+- Catch `error` and console log the error
+
+66. Build the HTML for the home page
+
+- `<h2>Note</h2>`
+- `<h2>Create a Note</h2>`
+- Create a form with three elements:
+  - Title input (with label)
+  - Content text area (with label)
+  - Submit button
+
 ### Commands
 
 1. `pip install -r requirements.txt`
