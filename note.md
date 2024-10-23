@@ -343,6 +343,23 @@
   - Content text area (with label)
   - Submit button
 
+### Build Note Component
+
+67. Create `Note.jsx` in `frontend/src/components` with function `Note`
+
+- Accept `{note, onDelete}` as the inputs
+- Create `formattedDate` using `Date().toLocaleDateString("en-US")`
+- `<div className="note-container">`
+  - `<p className="note-title">`: `{note.title}`
+  - `<p className="note-content">`: `{note.content}`
+  - `<p className="note-date">`: `{formattedDate}`
+  - `<button className="delete-button" onClick>`: "Delete"
+- Export the `Note` as default
+
+68. In `Home.jsx` under `<h2>Notes</h2>`, use `notes.map` to display all `Note` components
+
+69. Import `Note.css` into `Note.jsx`
+
 ### Commands
 
 1. `pip install -r requirements.txt`
