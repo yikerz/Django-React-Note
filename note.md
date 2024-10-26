@@ -373,6 +373,30 @@
 
 72. Insert `LoadingIndicator` component between password and button if `loading` state is `true`
 
+### Database Deployment
+
+73. Create a PostgreSQL database in Choreo
+74. Create `.env` in `backend` with
+
+- `DB_HOST=<from choreo>`
+- `DB_PORT=<from choreo>`
+- `DB_USER=<from choreo>`
+- `DB_NAME=<from choreo>`
+- `DB_PWD=<from choreo>`
+
+75. In `backend/backend/settings.py`, modify the `DATABASES` as following
+
+- `ENGINE`: `django.db.backends.postgresql`
+- `NAME`: `os.getenv("DB_NAME")`
+- `USER`: `os.getenv("DB_USER")`
+- `PASSWORD`: `os.getenv("DB_PWD")`
+- `HOST`: `os.getenv("DB_HOST")`
+- `PORT`: `os.getenv("DB_PORT")`
+
+76. Migrate the database ([cmd 5](#commands))
+77. Run both backend server and frontend
+78. Try to register and login
+
 ### Commands
 
 1. `pip install -r requirements.txt`
