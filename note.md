@@ -397,6 +397,30 @@
 77. Run both backend server and frontend
 78. Try to register and login
 
+### Deployment Configuration
+
+79. Create new folder `.choreo` inside `backend`
+80. Create a file `endpoints.yaml` in `backend/choreo`
+
+```yaml
+version: 0.1
+
+endpoints:
+  - name: "REST API"
+    port: <port>
+    type: REST
+    networkVisibility: Public
+    context: /
+```
+
+81. Create a file `Procfile` inside `backend` with only one line
+
+```
+web: python manage.py runserver 0.0.0.0:8001
+```
+
+82. Push to GitHub
+
 ### Commands
 
 1. `pip install -r requirements.txt`
